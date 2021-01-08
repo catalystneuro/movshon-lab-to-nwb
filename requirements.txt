@@ -1,0 +1,3 @@
+notebook
+pynwb
+h5py

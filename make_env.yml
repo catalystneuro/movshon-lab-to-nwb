@@ -1,0 +1,14 @@
+name: env_movshon
+channels:
+- defaults
+- anaconda
+- conda-forge
+dependencies:
+- python=3.8
+- pip
+- pip:
+  - notebook
+  - h5py
+  - pynwb
+  - hdmf
+  - nwb-conversion-tools
