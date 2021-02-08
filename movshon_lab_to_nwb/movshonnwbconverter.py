@@ -1,7 +1,8 @@
-from nwb_conversion_tools import NWBConverter, BlackrockRecordingInterface
+from nwb_conversion_tools import NWBConverter, BlackrockRecordingExtractorInterface, BlackrockSortingExtractorInterface
 
 
-class MovshonNWBConverter(NWBConverter):
+class MovshonBlackrockNWBConverter(NWBConverter):
     data_interface_classes = dict(
-        BlackrockInterface=BlackrockRecordingInterface
+        BlackrockRecordingExtractorInterface=BlackrockRecordingExtractorInterface, 
+        BlackrockSortingExtractorInterface=BlackrockSortingExtractorInterface
     )

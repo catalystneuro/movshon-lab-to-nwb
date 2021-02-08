@@ -1,0 +1,27 @@
+name: env_movshon
+dependencies:
+  - python=3.6
+  - pip
+  - pyqt
+  - cython
+  - pillow
+  - pip:
+    - notebook
+    - numpy
+    - h5py
+    - pynwb
+    - hdmf
+    - cython
+    - tqdm
+    - click
+    - pillow
+    - scipy
+    - matplotlib
+    - scikit-learn
+    - klusta
+    - klustakwik2
+    - neo
+    - jupyter
+    - pynwb
+    - pyopenephys
+    - spikeinterface==0.10.0
