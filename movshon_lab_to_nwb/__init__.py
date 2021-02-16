@@ -1,1 +1,4 @@
-from .movshonnwbconverter import MovshonBlackrockNWBConverter
+from .movshonnwbconverter import (
+    MovshonBlackrockNWBConverter, 
+    MovshonOpenEphysNWBConverter
+)
