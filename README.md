@@ -8,6 +8,7 @@ NWB conversion scripts and tutorials. A collaboration with [Movshon Lab](https:/
 - OpenEphys conversion to NWB
 - SpikeGLX processing through SpikeInterface
 - SpikeGLX conversion to NWB
+- Expo conversion to NWB
 
 # Install
 To clone the repository and set up a conda environment, do:
