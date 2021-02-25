@@ -2,6 +2,7 @@ from nwb_conversion_tools import (
     NWBConverter, BlackrockRecordingExtractorInterface, BlackrockSortingExtractorInterface,
     OpenEphysRecordingExtractorInterface, OpenEphysSortingExtractorInterface
 )
+
 from .expodatainterface import ExpoDataInterface
 
 

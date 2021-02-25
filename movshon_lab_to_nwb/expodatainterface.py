@@ -1,5 +1,7 @@
 from nwb_conversion_tools.basedatainterface import BaseDataInterface
 from pynwb import NWBFile
+from pathlib import Path
+import pyopenephys
 
 from .utils_expo import process_blocksV2, process_passesV2
 
@@ -18,6 +20,11 @@ class ExpoDataInterface(BaseDataInterface):
                     type="string",
                     format="file",
                     description="path to xml file containing expo data"
+                ),
+                ttl_file=dict(
+                    type="string",
+                    format="file",
+                    description="path to file containing TTL data for synchronization (openephys or spikeglx)"
                 )
             )
         )
@@ -53,6 +60,17 @@ class ExpoDataInterface(BaseDataInterface):
             return
 
         print(f'Adding expo data...')
+
+        # Get sync offset time to add to Expo trials timestamps
+        ttl_file = self.source_data['ttl_file']
+        t_offset = 0
+        if Path(ttl_file).is_file():
+            if ttl_file.endswith('.continuous'):  # OpenEphys
+                t_offset = get_first_sync_time_openephys(filepath=ttl_file)
+            elif '.imec.' in ttl_file:  # SpikeGLX
+                raise NotImplementedError("SpikeGLX offset not implemented")
+        print(f'Trials sync offset: {t_offset}')
+
         expo_file = self.source_data['expo_file']
         if expo_file.endswith('.xml'):
             trials = process_passesV2(expo_file)
@@ -81,10 +99,22 @@ class ExpoDataInterface(BaseDataInterface):
             # Add trials rows
             for tr in trials.values():
                 trial_dict = dict(
-                    start_time=tr['StartTime'], 
-                    stop_time=tr['EndTime']
+                    start_time=tr['StartTime'] + t_offset, 
+                    stop_time=tr['EndTime'] + t_offset
                 )
                 for c in col_names:
                     trial_dict[c] = blocks[str(tr['BlockID'])].get(c, '')
                     
                 nwbfile.add_trial(**trial_dict)
+
+
+def get_first_sync_time_openephys(filepath):
+    """
+    Get first TTL pulse time from 100_ADC1.continuous file 
+    to synchronize Expo trials with Openephys recording
+    """
+    d = pyopenephys.openephys_tools.loadContinuous(filepath=filepath)
+    for i, b in enumerate(d['data'] > 10000):
+        if b:
+            return i / float(d['header']['sampleRate'])
+    return None
