@@ -1,4 +1,5 @@
 from nwb_conversion_tools.basedatainterface import BaseDataInterface
+from spikeextractors import SpikeGLXRecordingExtractor
 from pynwb import NWBFile
 from pathlib import Path
 import pyopenephys
@@ -68,7 +69,8 @@ class ExpoDataInterface(BaseDataInterface):
             if ttl_file.endswith('.continuous'):  # OpenEphys
                 t_offset = get_first_sync_time_openephys(filepath=ttl_file)
             elif '.imec.' in ttl_file:  # SpikeGLX
-                raise NotImplementedError("SpikeGLX offset not implemented")
+                # raise NotImplementedError("SpikeGLX offset not implemented")
+                t_offset = get_first_sync_time_spikeglx(filepath=ttl_file)
         print(f'Trials sync offset: {t_offset}')
 
         expo_file = self.source_data['expo_file']
@@ -118,3 +120,14 @@ def get_first_sync_time_openephys(filepath):
         if b:
             return i / float(d['header']['sampleRate'])
     return None
+
+
+def get_first_sync_time_spikeglx(filepath):
+    """
+    Get first TTL pulse time from spikeglx file 
+    to synchronize Expo trials with SpikeGLX recording
+    """
+    rec = SpikeGLXRecordingExtractor(file_path=filepath)
+    xx, yy = rec.get_ttl_events()
+    rate = rec.get_sampling_frequency()
+    return xx[0] / rate

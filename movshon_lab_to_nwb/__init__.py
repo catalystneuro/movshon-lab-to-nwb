@@ -1,4 +1,5 @@
 from .movshonnwbconverter import (
     MovshonBlackrockNWBConverter, 
-    MovshonOpenEphysNWBConverter
+    MovshonOpenEphysNWBConverter,
+    MovshonSpikeglxNWBConverter
 )
