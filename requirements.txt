@@ -2,3 +2,5 @@ notebook
 pynwb
 h5py
 pyopenephys
+neo
+git+https://github.com/catalystneuro/nwb-conversion-tools@blackrock_datainterface

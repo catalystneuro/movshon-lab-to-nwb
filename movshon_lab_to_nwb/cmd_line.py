@@ -14,7 +14,9 @@ NWB_GUI_RENDER_DASHBOARD = 'False'
 # Converter module and class
 NWB_GUI_CONVERTER_MODULE = 'movshon_lab_to_nwb'
 NWB_GUI_CONVERTER_CLASS = dict(
-    blackrock='BlackrockNWBConverter'
+    blackrock='MovshonBlackrockNWBConverter',
+    openephys='MovshonOpenEphysNWBConverter',
+    spikeglx='MovshonSpikeglxNWBConverter'
 )
 # ---------------------------------------------------------
 
