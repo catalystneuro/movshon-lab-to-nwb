@@ -4,4 +4,5 @@ h5py
 pyopenephys
 neo
 git+https://github.com/catalystneuro/nwb-conversion-tools@blackrock_datainterface
+git+https://github.com/SpikeInterface/spiketoolkit@add_return_scaled
 git+https://github.com/SpikeInterface/spikeextractors@return_scaled
