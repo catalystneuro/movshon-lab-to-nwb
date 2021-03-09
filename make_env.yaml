@@ -5,9 +5,10 @@ dependencies:
   - pyqt
   - cython
   - pillow
+  - numpy
+  - scipy
   - pip:
     - notebook
-    - numpy
     - h5py
     - pynwb
     - hdmf
@@ -15,13 +16,18 @@ dependencies:
     - tqdm
     - click
     - pillow
-    - scipy
     - matplotlib
     - scikit-learn
     - klusta
     - klustakwik2
+    - herdingspikes
     - neo
     - jupyter
     - pynwb
     - pyopenephys
-    - spikeinterface==0.10.0
+    - git+https://github.com/catalystneuro/nwb-conversion-tools@blackrock_datainterface
+    - nwbwidgets
+    - git+https://github.com/SpikeInterface/spiketoolkit
+    - git+https://github.com/SpikeInterface/spikeextractors
+    - spikecomparison
+    - spikewidgets
