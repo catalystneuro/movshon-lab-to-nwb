@@ -27,7 +27,7 @@ dependencies:
     - pyopenephys
     - git+https://github.com/catalystneuro/nwb-conversion-tools@blackrock_datainterface
     - nwbwidgets
-    - git+https://github.com/SpikeInterface/spiketoolkit
-    - git+https://github.com/SpikeInterface/spikeextractors
+    - spiketoolkit
+    - spikeextractors
     - spikecomparison
     - spikewidgets
