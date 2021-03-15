@@ -26,3 +26,9 @@ class MovshonSpikeglxNWBConverter(NWBConverter):
         SpikeGLXRecordingExtractorInterface=SpikeGLXRecordingInterface, 
         ExpoDataInterface=ExpoDataInterface
     )
+
+
+class MovshonExpoNWBConverter(NWBConverter):
+    data_interface_classes = dict(
+        ExpoDataInterface=ExpoDataInterface
+    )
