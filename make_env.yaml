@@ -1,4 +1,4 @@
-name: env_movshon
+name: env_movshon2
 dependencies:
   - python=3.6
   - pip
@@ -25,9 +25,10 @@ dependencies:
     - jupyter
     - pynwb
     - pyopenephys
-    - git+https://github.com/catalystneuro/nwb-conversion-tools
+    - nwb-conversion-tools
     - nwbwidgets
     - spiketoolkit
     - spikeextractors
     - spikecomparison
     - spikewidgets
+    - -e .
