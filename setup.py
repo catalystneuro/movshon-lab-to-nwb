@@ -17,6 +17,7 @@ setup(
     long_description_content_type='text/markdown',
     author='Luiz Tauffer and Ben Dichter',
     email='ben.dichter@gmail.com',
+    url='https://github.com/catalystneuro/movshon-lab-to-nwb',
     packages=find_packages(),
     include_package_data=True,
     package_data={'': ['*.yml', '*.json']},
