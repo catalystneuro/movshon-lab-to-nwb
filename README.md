@@ -1,5 +1,7 @@
 # movshon-lab-to-nwb
 
+[![PyPI version](https://badge.fury.io/py/movshon-lab-to-nwb.svg)](https://badge.fury.io/py/movshon-lab-to-nwb)
+
 NWB conversion scripts and tutorials. A collaboration with [Movshon Lab](https://www.cns.nyu.edu/labs/movshonlab/).
 
 - Blackrock processing through SpikeInterface
