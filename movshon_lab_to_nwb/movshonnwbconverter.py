@@ -9,9 +9,9 @@ from .expodatainterface import ExpoDataInterface
 
 class MovshonBlackrockNWBConverter(NWBConverter):
     data_interface_classes = dict(
-        BlackrockRecordingInterfaceRaw=BlackrockRecordingExtractorInterface, 
-        BlackrockRecordingInterfaceProcessed=BlackrockRecordingExtractorInterface, 
-        BlackrockSortingExtractorInterface=BlackrockSortingExtractorInterface
+        BlackrockRaw=BlackrockRecordingExtractorInterface, 
+        BlackrockProcessed=BlackrockRecordingExtractorInterface, 
+        BlackrockSorting=BlackrockSortingExtractorInterface
     )
 
 
