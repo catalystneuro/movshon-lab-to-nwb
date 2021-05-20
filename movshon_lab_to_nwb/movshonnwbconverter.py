@@ -14,6 +14,21 @@ class MovshonBlackrockNWBConverter(NWBConverter):
         BlackrockSorting=BlackrockSortingExtractorInterface
     )
 
+    def get_conversion_options(self):
+        conversion_options = dict(
+            BlackrockRaw=dict(
+                write_as='raw', 
+                es_key='ElectricalSeries_raw', 
+                stub_test=False
+            ),
+            BlackrockProcessed=dict(
+                write_as='processed', 
+                es_key='ElectricalSeries_processed', 
+                stub_test=False
+            )
+        )
+        return conversion_options
+
 
 class MovshonOpenEphysNWBConverter(NWBConverter):
     data_interface_classes = dict(
