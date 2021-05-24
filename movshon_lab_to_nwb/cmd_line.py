@@ -85,7 +85,7 @@ def cmd_line_shortcut():
     os.environ['NWB_GUI_CONVERTER_CLASS'] = NWB_GUI_CONVERTER_CLASS[run_args.experiment]
 
     print(f'NWB GUI running on localhost:{run_args.port}')
-    print(f'Data path: {data_path}')
+    print(f'Data path: {str(Path(data_path).resolve())}')
     if run_args.dev:
         os.environ['FLASK_ENV'] = 'development'
         print('Running in development mode')
