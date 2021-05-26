@@ -46,6 +46,9 @@ class ExpoDataInterface(BaseDataInterface):
         )
         return conversion_options_schema
 
+    def get_conversion_options(self):
+        conversion_options = dict(convert_expo=True) 
+        return conversion_options
 
     def run_conversion(self, nwbfile: NWBFile, metadata: dict, convert_expo: bool=False):
         """
