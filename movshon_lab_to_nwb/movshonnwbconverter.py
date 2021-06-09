@@ -1,7 +1,7 @@
 from nwb_conversion_tools import (
     NWBConverter, BlackrockRecordingExtractorInterface, BlackrockSortingExtractorInterface,
     OpenEphysRecordingExtractorInterface, OpenEphysSortingExtractorInterface,
-    SpikeGLXRecordingInterface
+    SpikeGLXRecordingInterface, SpikeGLXLFPInterface
 )
 
 from .expodatainterface import ExpoDataInterface
@@ -43,7 +43,7 @@ class MovshonOpenEphysNWBConverter(NWBConverter):
 class MovshonSpikeglxNWBConverter(NWBConverter):
     data_interface_classes = dict(
         SpikeGLXRaw=SpikeGLXRecordingInterface, 
-        SpikeGLXLFP=SpikeGLXRecordingInterface, 
+        SpikeGLXLFP=SpikeGLXLFPInterface, 
         ExpoDataInterface=ExpoDataInterface
     )
 
