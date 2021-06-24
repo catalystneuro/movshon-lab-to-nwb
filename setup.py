@@ -11,7 +11,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='movshon_lab_to_nwb',
-    version='0.1.0',
+    version='0.1.1',
     description='NWB conversion scripts and tutorials.',
     long_description=long_description,
     long_description_content_type='text/markdown',
