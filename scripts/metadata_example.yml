@@ -1,0 +1,16 @@
+NWBFile:
+  experimenter:
+    - Name1 Surname1
+    - Name2 Surname2
+  institution: New York University
+  lab: Movshon lab
+  session_description: a descriptions for this session
+  session_start_time: 2018-08-09T10:00:00-05:00
+  surgery: "Date of the surgery: 08/08/2018
+           some details of the surgery..."
+Subject:
+  sex: female
+  species: species_name
+  subject_id: ID123
+  weight: 18.8g
+  date_of_birth: 2018-01-01T00:00:00-05:00
